@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "../index.css";
 // import f2FrameLeft from "../assets/f2-frame-left.svg";
 

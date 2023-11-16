@@ -11,29 +11,35 @@ const Frame3 = (props: Props) => {
 
   useEffect(() => {
     const framesVideo = document.getElementById("framesVideo");
-
+  
     const updateVideoHeight = () => {
       if (framesVideo) {
         const newVideoHeight = framesVideo.clientHeight;
         setVideoHeight(newVideoHeight);
       }
     };
-
-    const handleWindowLoad = () => {
-      // Initial update after the entire page has loaded
+  
+    const handleVideoLoad = () => {
       updateVideoHeight();
-
-      // Update on window resize
-      window.addEventListener("resize", updateVideoHeight);
     };
-
-    // Wait for the entire page to load
-    window.addEventListener("load", handleWindowLoad);
-
+  
+    // Initial update on mount
+    updateVideoHeight();
+  
+    // Update on window resize
+    window.addEventListener("resize", updateVideoHeight);
+  
+    // Listen for video load event
+    if (framesVideo) {
+      framesVideo.addEventListener("load", handleVideoLoad);
+    }
+  
     return () => {
-      // Cleanup event listeners
       window.removeEventListener("resize", updateVideoHeight);
-      window.removeEventListener("load", handleWindowLoad);
+  
+      if (framesVideo) {
+        framesVideo.removeEventListener("load", handleVideoLoad);
+      }
     };
   }, []);
 
@@ -57,13 +63,12 @@ const Frame3 = (props: Props) => {
     if (video) {
       video.pause();
       setCurrentSkill(skill);
-      video.play();
       setIsPlaying(false);
     }
   };
 
   return (
-    <div className="relative min-h-screen md:-translate-y-10 z-10">
+    <div className="relative min-h-screen md:-translate-y-[5vh] z-10">
       <img
         src="/f3-bg-desktop.png"
         className="absolute h-[150vh] -bottom-[47vh] w-full hidden md:block "
@@ -76,22 +81,24 @@ const Frame3 = (props: Props) => {
         alt="frame 3 background mobile"
       />
 
-      <div className="relative flex flex-col md:flex-row min-h-screen z-20">
-        <div className="hidden md:flex"></div>
-
-        <div className="flex flex-col justify-around items-center min-h-screen w-full">
-          <div className="flex w-[80%] text-3xl font-bold text-white justify-around">
+      <div className="relative flex flex-col min-h-screen z-20 lg:mt-20">
+        <div className="flex flex-col justify-around items-center min-h-screen w-full md:w-[70%] md:ml-[5%]">
+          <div className="flex w-[80%] md:w-[60%] lg:w-[40%] text-3xl font-bold text-white justify-around">
+            <span>🏐</span>
             <span className="text-[#C9FF46]">GEKKO</span>
             <span className="text-[#C9FF46]"> // </span>
             <span>TIỂU SỬ</span>
           </div>
-          <div className="w-[70%] text-white justify-around text-center font-GMVDIN font-semibold leading-7">
+          <div className="w-[70%] md:w-[60%] text-white text-center font-GMVDIN font-semibold leading-7">
             Gã trai phố thị L.A. - là người dẫn đầu biệt đội toàn những sinh vật
             "lắm chiêu" và rất thân thiết. Gekko đuổi theo những đồng đội đang
             mải miết lao tới hất tung tất cả kẻ thù đang ngáng đường, ráng sức
             tập hợp chúng lại để có thể tiếp tục ra chiêu.
           </div>
-          <div className="flex justify-center items-center w-[70%] shadow-[rgba(0,_0,_0,_0.4)_0px_30px_90px]">
+
+          {/* Video ----------------------------------------------------------------------------------------------- */}
+
+          <div className="flex justify-center items-center w-[80%] md:w-[70%] ">
             <img
               src="/f3-Frame-left.png"
               className="relative md:hidden py-4"
@@ -101,15 +108,15 @@ const Frame3 = (props: Props) => {
 
             <div className="flex justify-center items-center w-full h-fit">
               <video
-                className="relative border-2 border-[#C9FF46] rounded-2xl w-fullt"
+                className="relative border-2 border-[#C9FF46] rounded-2xl w-full"
                 src={`/video/Gekko ${currentSkill} Skill.mov`}
                 id="framesVideo"
                 muted
                 ref={videoRef}
               ></video>
               <div
-                className="absolute flex justify-center w-[65%] md:w-[69%] border rounded-lg border-[#C9FF46] z-10 "
-                style={{ height: videoHeight - 9 }}
+                className="absolute flex justify-center w-[75%] md:w-[48%] border rounded-lg border-[#C9FF46] z-10 "
+                style={{ height: videoHeight - 10 }}
                 onClick={handleVideoClick}
               ></div>
               <img
@@ -128,7 +135,9 @@ const Frame3 = (props: Props) => {
             />
           </div>
 
-          <div className="grid grid-cols-4 gap-2 justify-evenly ">
+          {/* Skill ------------------------------------------------------------------------- */}
+
+          <div className="md:absolute grid grid-cols-4 md:grid-cols-1 md:top-[50%] md:-translate-y-[30%] md:-translate-x-[50%] md:left-[8%] md:grid-rows-4 gap-2 justify-evenly mt-5">
             <div
               className="h-20 w-20 border-2 rounded-lg bg-[#8647EC] border-[#C9FF46]"
               onClick={() => handleSkillClick("First")}
@@ -136,7 +145,7 @@ const Frame3 = (props: Props) => {
               <img
                 className="p-2 pt-4"
                 src={`${
-                  currentSkill == "First" ? "/skill1b.png" : "/skill1a.png"
+                  currentSkill === "First" ? "/skill1b.png" : "/skill1a.png"
                 }`}
                 alt="skill a"
               />
@@ -149,9 +158,9 @@ const Frame3 = (props: Props) => {
               <img
                 className="p-2"
                 src={`${
-                  currentSkill == "Second" ? "/skill2b.png" : "/skill2a.png"
+                  currentSkill === "Second" ? "/skill2b.png" : "/skill2a.png"
                 }`}
-                alt="skill a"
+                alt="skill b"
               />
             </div>
 
@@ -162,9 +171,9 @@ const Frame3 = (props: Props) => {
               <img
                 className="p-2"
                 src={`${
-                  currentSkill == "Third" ? "/skill3b.png" : "/skill3a.png"
+                  currentSkill === "Third" ? "/skill3b.png" : "/skill3a.png"
                 }`}
-                alt="skill a"
+                alt="skill c"
               />
             </div>
 
@@ -175,23 +184,81 @@ const Frame3 = (props: Props) => {
               <img
                 className="p-2"
                 src={`${
-                  currentSkill == "Forth" ? "/skill4b.png" : "/skill4a.png"
+                  currentSkill === "Forth" ? "/skill4b.png" : "/skill4a.png"
                 }`}
-                alt="skill a"
+                alt="skill d"
               />
             </div>
           </div>
 
+          {/* Skill Description ------------------------------------------------------------------------- */}
+
           <div className="flex flex-col w-[70%]">
-            <div className="">
+            <div
+              className={`${
+                currentSkill === "First" ? "flex" : "hidden"
+              } flex-col items-center md:items-start`}
+            >
+              <div className="text-[#C9FF46] font-bold text-xl">
+                C - Hố Bom của Mosh
+              </div>
+              <div className="text-white text-center md:text-start font-GMVDIN font-semibold leading-7 md:pl-3">
+                TRANG BỊ Mosh. Nhấn BẮN để quăng Mosh như trái lựu đạn. Nhấn CHẾ
+                ĐỘ PHỤ để ném tầm thấp. Sau khi đáp đất, Mosh phân tách bản thân
+                ra một khu vực rộng hơn rồi phát nổ sau khoảng thời gian ngắn.
+              </div>
+            </div>
+
+            <div
+              className={`${
+                currentSkill === "Second" ? "flex" : "hidden"
+              } flex-col items-center  md:items-start`}
+            >
+              <div className="text-[#C9FF46] font-bold text-xl">
+                Q - Wingman
+              </div>
+              <div className="text-white text-center md:text-start font-GMVDIN font-semibold leading-7 md:pl-3">
+                TRANG BỊ Wingman, nhấn BẮN để phóng Wingman lên trước dò kẻ
+                địch. Wingman phát ra xung chấn lên kẻ địch đầu tiên nhìn thấy.
+                Nhấn CHẾ ĐỘ PHỤ khi chỉ tâm ngắm vào khu vực đặt Spike hoặc
+                Spike đã được đặt để Wingman đặt hoặc gỡ Spike. Để đặt Spike,
+                Gekko phải có Spike trong kho đồ. Khi Wingman hết thời gian hiệu
+                lực, nó sẽ tiêu biến thành một tiểu thể không hoạt động. TƯƠNG
+                TÁC để thu hồi tiểu thể và nhận thêm 1 lượt dùng Wingman sau
+                khoảng thời gian hồi chiêu ngắn.
+              </div>
+            </div>
+
+            <div
+              className={`${
+                currentSkill === "Third" ? "flex" : "hidden"
+              } flex-col items-center  md:items-start`}
+            >
               <div className="text-[#C9FF46] font-bold text-xl">E - Dizzy</div>
-              <div className="text-white">
+              <div className="text-white text-center md:text-start font-GMVDIN font-semibold leading-7 md:pl-3">
                 TRANG BỊ Dizzy. Nhấn BẮN để cử Dizzy bay vút thẳng lên không
                 trung. Dizzy vận sức, sau đó phóng ra tia plasma lên kẻ địch
                 trong tầm nhìn. Kẻ địch trúng tia plasma sẽ bị mù. Khi Dizzy hết
                 thời gian hiệu lực, nó sẽ tiêu biến thành một tiểu thể không
                 hoạt động. TƯƠNG TÁC để thu hồi tiểu thể và nhận thêm 1 lượt
                 dùng Dizzy sau khoảng thời gian hồi chiêu ngắn.
+              </div>
+            </div>
+
+            <div
+              className={`${
+                currentSkill === "Forth" ? "flex" : "hidden"
+              } flex-col items-center  md:items-start`}
+            >
+              <div className="text-[#C9FF46] font-bold text-xl">X - Thrash</div>
+              <div className="text-white text-center md:text-start font-GMVDIN font-semibold leading-7 md:pl-3">
+                TRANG BỊ Thrash. Nhấn BẮN để kết nối với tâm trí của Thrash và
+                điều khiển nó xuyên qua lãnh địa của kẻ thù. KÍCH HOẠT để lao về
+                phía trước và phát nổ, giam cầm mọi kẻ địch trong một phạm vi
+                nhỏ. Khi Thrash hết thời gian hiệu lực, nó sẽ tiêu biến thành
+                một tiểu thể không hoạt động. TƯƠNG TÁC để thu hồi tiểu thể và
+                nhận thêm 1 lượt dùng Thrash sau khoảng thời gian hồi chiêu
+                ngắn. Có thể thu hồi Thrash một lần.
               </div>
             </div>
           </div>
