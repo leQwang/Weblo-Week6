@@ -32,7 +32,7 @@ const Frame5: React.FC<Props> = (props: Props) => {
       {/* desktop */}
       <div className="hidden md:block h-full">
         <div
-          // className={`absolute translate-x-[-${view}%] transform top-0 h-full w-[250%] transition-transform duration-500 ease-in-out`}
+          // className={`absolute translate-x-[-${view}%] transform top-0 h-full w-[350%] transition-transform duration-500 ease-in-out`}
           className={`absolute -left-[${view}%] top-0 h-full w-[250%] transition-transform duration-500 ease-in-out`}
         >
           <img

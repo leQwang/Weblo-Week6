@@ -9,11 +9,11 @@ const Frame6 = (props: Props) => {
       <div className="w-full h-full flex items-center">
         <img
           src="/f6-desktop-gekko.png"
-          className="absolute right-0 top-0"
+          className="absolute right-0 top-0 hidden md:block"
           alt="frame 6 desktop background"
         />
-        <div className="flex flex-col items-center justify-around w-[50%] h-[35%] z-10">
-          <div className="text-black w-[60%] font-semibold text-3xl text-center">
+        <div className="flex flex-col items-center justify-around  md:w-[50%] h-[30%] md:h-[35%] z-10 mt-[40vh]">
+          <div className="text-black w-[80%] md:w-[60%] font-semibold text-2xl md:text-3xl text-center">
             BẮT ĐẦU HÀNH TRÌNH KHỞI TRANH BÙNG NỔ VÀ ĐA DẠNG ĐẶC VỤ TẠI
           </div>
           <img
@@ -29,9 +29,7 @@ const Frame6 = (props: Props) => {
           {/* Button */}
           <div className="flex justify-center items-center w-full mb-8">
             <div>
-              <div
-                className={`main__button2 w-24 md:w-36`}
-              ></div>
+              <div className={`main__button2 w-24 md:w-36`}></div>
               <div className={`flex justify-end text-[#8C4AEC]`}>
                 <div className="pr-5 my-3">
                   <div className="pointy-right2"></div>
@@ -80,6 +78,47 @@ const Frame6 = (props: Props) => {
               </div>
               <div className="main__button2 w-24 md:w-36"></div>
             </div>
+          </div>
+
+          {/* Social Media */}
+          <div className="relative flex items-center justify-center mb-20 lg:mb-32">
+            <button
+              // onClick={() => redirectToLink("https://www.facebook.com/")}
+              className="relative flex flex-col border-2 border-[#8C4AEC] bg-transparent p-7 overflow-hidden button__footer mx-5
+          before:contents[''] before:w-1 before:h-1 before:bg-[#8C4AEC] before:border-white before:absolute before:-top-0 before:-right-0 before:z-10
+          after:contents[''] after:w-1 after:h-1 after:bg-[#8C4AEC] after:border-white after:absolute after:-bottom-0 after:-left-0 after:z-10"
+            >
+              <div className="absolute bg-black w-[200%] h-[200%] -bottom-[200%] -left-[200%] skew-x-[45deg] duration-200"></div>
+              <div className="absolute top-3 left-1 border-b border-[#8C4AEC] w-3 transform rotate-45 transform-origin-left"></div>
+              <img src={"/f6-circle-bug"} alt="facebook icon" className="w-8 z-10" />
+              <div className="absolute bottom-3 right-1 border-b border-[#8C4AEC] w-3 transform rotate-45 transform-origin-left"></div>
+            </button>
+
+            <button
+              // onClick={() => redirectToLink("https://www.youtube.com/")}
+              className="relative flex flex-col border-2 border-[#8C4AEC] bg-transparent p-7 overflow-hidden button__footer mx-5
+          before:contents[''] before:w-1 before:h-1 before:bg-[#8C4AEC] before:border-white before:absolute before:-top-0 before:-right-0 before:z-10
+          after:contents[''] after:w-1 after:h-1 after:bg-[#8C4AEC] after:border-white after:absolute after:-bottom-0 after:-left-0 after:z-10"
+            >
+              {" "}
+              <div className="absolute bg-black w-[200%] h-[200%] -bottom-[200%] -left-[200%] skew-x-[45deg] duration-200"></div>
+              <div className="absolute top-3 left-1 border-b border-[#8C4AEC] w-3 transform rotate-45 transform-origin-left"></div>
+              <img src={`/f6-circle-bug`} alt="facebook icon" className="w-8 z-10" />
+              <div className="absolute bottom-3 right-1 border-b border-[#8C4AEC] w-3 transform rotate-45 transform-origin-left"></div>
+            </button>
+
+            <button
+              // onClick={() => redirectToLink("https://www.tiktok.com/")}
+              className="relative flex flex-col border-2 border-[#8C4AEC] bg-transparent p-7 overflow-hidden button__footer mx-5
+          before:contents[''] before:w-1 before:h-1 before:bg-[#8C4AEC] before:border-white before:absolute before:-top-0 before:-right-0 before:z-10
+          after:contents[''] after:w-1 after:h-1 after:bg-[#8C4AEC] after:border-white after:absolute after:-bottom-0 after:-left-0 after:z-10"
+            >
+              {" "}
+              <div className="absolute bg-black w-[200%] h-[200%] -bottom-[200%] -left-[200%] skew-x-[45deg] duration-200"></div>
+              <div className="absolute top-3 left-1 border-b border-[#8C4AEC] w-3 transform rotate-45 transform-origin-left"></div>
+              <img src={`/f6-circle-bug`} alt="facebook icon" className="w-8 z-10" />
+              <div className="absolute bottom-3 right-1 border-b border-[#8C4AEC] w-3 transform rotate-45 transform-origin-left"></div>
+            </button>
           </div>
         </div>
       </div>
