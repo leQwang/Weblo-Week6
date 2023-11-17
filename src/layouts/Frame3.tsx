@@ -77,19 +77,19 @@ const Frame3 = (props: Props) => {
 
       <img
         src="/f3-bg-mobile.png"
-        className="absolute -bottom-[20vh] h-[135vh] w-full md:hidden"
+        className="absolute -bottom-[25vh] h-[140vh] w-full md:hidden"
         alt="frame 3 background mobile"
       />
 
       <div className="relative flex flex-col min-h-screen z-20 lg:mt-20">
-        <div className="flex flex-col justify-around items-center min-h-screen w-full md:w-[70%] md:ml-[5%]">
+        <div className="flex flex-col justify-start  items-center min-h-screen w-full md:w-[70%] md:ml-[5%]">
           <div className="flex w-[80%] md:w-[60%] lg:w-[40%] text-3xl font-bold text-white justify-around">
             <span>🏐</span>
             <span className="text-[#C9FF46]">GEKKO</span>
             <span className="text-[#C9FF46]"> // </span>
             <span>TIỂU SỬ</span>
           </div>
-          <div className="w-[70%] md:w-[60%] text-white text-center font-GMVDIN font-semibold leading-7">
+          <div className="w-[70%] md:w-[50%] text-white text-center font-GMVDIN font-semibold leading-7">
             Gã trai phố thị L.A. - là người dẫn đầu biệt đội toàn những sinh vật
             "lắm chiêu" và rất thân thiết. Gekko đuổi theo những đồng đội đang
             mải miết lao tới hất tung tất cả kẻ thù đang ngáng đường, ráng sức
@@ -109,7 +109,7 @@ const Frame3 = (props: Props) => {
             <div className="flex justify-center items-center w-full h-fit">
               <video
                 className="relative border-2 border-[#C9FF46] rounded-2xl w-full"
-                src={`/video/Gekko ${currentSkill} Skill.mov`}
+                src={`/video/Gekko ${currentSkill} Skill.mp4`}
                 id="framesVideo"
                 muted
                 ref={videoRef}
@@ -139,7 +139,7 @@ const Frame3 = (props: Props) => {
 
           <div className="md:absolute grid grid-cols-4 md:grid-cols-1 md:top-[50%] md:-translate-y-[30%] md:-translate-x-[50%] md:left-[8%] md:grid-rows-4 gap-2 justify-evenly mt-5">
             <div
-              className="h-20 w-20 border-2 rounded-lg bg-[#8647EC] border-[#C9FF46]"
+              className="h-20 w-20 border-2 rounded-lg bg-[#8647EC] border-[#C9FF46] cursor-pointer"
               onClick={() => handleSkillClick("First")}
             >
               <img
@@ -152,7 +152,7 @@ const Frame3 = (props: Props) => {
             </div>
 
             <div
-              className="h-20 w-20 border-2 rounded-lg bg-[#8647EC] border-[#C9FF46]"
+              className="h-20 w-20 border-2 rounded-lg bg-[#8647EC] border-[#C9FF46] cursor-pointer"
               onClick={() => handleSkillClick("Second")}
             >
               <img
@@ -165,7 +165,7 @@ const Frame3 = (props: Props) => {
             </div>
 
             <div
-              className="h-20 w-20 border-2 rounded-lg bg-[#8647EC] border-[#C9FF46]"
+              className="h-20 w-20 border-2 rounded-lg bg-[#8647EC] border-[#C9FF46] cursor-pointer"
               onClick={() => handleSkillClick("Third")}
             >
               <img
@@ -178,7 +178,7 @@ const Frame3 = (props: Props) => {
             </div>
 
             <div
-              className="h-20 w-20 border-2 rounded-lg bg-[#8647EC] border-[#C9FF46]"
+              className="h-20 w-20 border-2 rounded-lg bg-[#8647EC] border-[#C9FF46] cursor-pointer"
               onClick={() => handleSkillClick("Forth")}
             >
               <img
@@ -193,7 +193,7 @@ const Frame3 = (props: Props) => {
 
           {/* Skill Description ------------------------------------------------------------------------- */}
 
-          <div className="flex flex-col w-[70%]">
+          <div className="flex flex-col w-[60%] flex-grow">
             <div
               className={`${
                 currentSkill === "First" ? "flex" : "hidden"

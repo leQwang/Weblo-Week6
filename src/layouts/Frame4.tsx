@@ -18,26 +18,31 @@ export default function Frame4(props: Props) {
     },
   });
   return (
-    <div className="relative w-screen min-h-screen overflow-hidden bg-white">
+    <div className="relative w-screen min-h-screen overflow-hidden">
       <div className="navigation-wrapper ">
         <div ref={sliderRef} className="keen-slider">
-          <div className="keen-slider__slide h-screen">
-            <video src="/video/Gekko Video 2.mp4" className="absolute object-cover h-full w-full" autoPlay loop muted></video>
+          <div className="keen-slider__slide md:h-screen">
+            <video src="/video/Gekko Video 2.mp4" className="absolute object-cover h-full w-full hidden md:block" autoPlay loop muted></video>
+            <img src="/f4-mobile-0.png" className="md:hidden object-cover h-full w-full" alt="frame 4 picture 0 mobile" />
           </div>
-          <div className="keen-slider__slide number-slide1">
-            <img src="/f4-1.png" alt="frame 4 picture 1" />
+          <div className="keen-slider__slide md:h-screen ">
+            <img src="/f4-1.png" className="hidden md:block object-cover h-full w-full" alt="frame 4 picture 1" />
+            <img src="/f4-mobile-1.png" className="md:hidden object-cover h-full w-full" alt="frame 4 picture 1 mobile" />
           </div>
-          <div className="keen-slider__slide number-slide2">
-            <img src="/f4-2.png" alt="frame 4 picture 2" />
+          <div className="keen-slider__slide md:h-screen ">
+            <img src="/f4-2.png" className="hidden md:block object-cover h-full w-full" alt="frame 4 picture 2" />
+            <img src="/f4-mobile-2.png" className="md:hidden object-cover h-full w-full" alt="frame 4 picture 2" />
           </div>
-          <div className="keen-slider__slide number-slide3">
-            <img src="/f4-3.png" alt="frame 4 picture 3" />
+          <div className="keen-slider__slide md:h-screen">
+            <img src="/f4-3.png" className="hidden md:block object-cover h-full w-full" alt="frame 4 picture 3" />
+            <img src="/f4-mobile-3.png" className="md:hidden object-cover h-full w-full" alt="frame 4 picture 3" />
           </div>
-          <div className="keen-slider__slide number-slide4">
-            <img src="/f4-4.png" alt="frame 4 picture 4" />
+          <div className="keen-slider__slide md:h-screen">
+            <img src="/f4-4.png" className="hidden md:block object-cover h-full w-full" alt="frame 4 picture 4" />
+            <img src="/f4-mobile-4.png" className="md:hidden object-cover h-full w-full" alt="frame 4 picture 4" />
           </div>
-          <div className="keen-slider__slide number-slide5">
-            <img src="/f4-5.png" alt="frame 4 picture 5" />
+          <div className="md:keen-slider__slide md:h-screen hidden md:block">
+            <img src="/f4-5.png" className="hidden md:block object-cover h-full w-full" alt="frame 4 picture 5" />
           </div>
         </div>
         {loaded && instanceRef.current && (

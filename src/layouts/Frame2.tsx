@@ -62,7 +62,7 @@ const Frame2 = (props: Props) => {
   }, []);
 
   return (
-    <div className="flex relative w-screen min-h-screen bg-f2-mobile md:bg-f2-purple bg-center bg-cover bg-no-repeat">
+    <div className="flex relative w-screen min-h-screen bg-f2-mobile md:bg-f2-purple ">
       {/*  bg-f2-mobile bg-center bg-cover bg-no-repeat */}
 
       <img
@@ -72,7 +72,7 @@ const Frame2 = (props: Props) => {
       />
 
 
-      <div className="relative flex flex-col justify-around items-center z-20">
+      <div className="relative flex flex-col justify-around items-center w-full z-20">
         <div className="flex flex-col items-center justify-around w-[60%] mb-2 flex-grow">
           <img
             src="/ValorantLogo.png"
