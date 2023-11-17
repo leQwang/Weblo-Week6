@@ -92,6 +92,14 @@ a {
   background-image: radial-gradient(#ccff42 45%, #52329d00 55%);
 }
 
+.main__button2 {
+  display:block;
+  border:none;
+  color:white;
+  height:1px;
+  background-image: radial-gradient(#8C4AEC 45%, #52329d00 55%);
+}
+
 .pointy-left {
   border-top:5px solid transparent;
   border-bottom:5px solid transparent;
@@ -112,6 +120,28 @@ a {
   background:#ccff42;
   width:10px;
 }
+
+.pointy-left2 {
+  border-top:5px solid transparent;
+  border-bottom:5px solid transparent;
+  border-right:5px solid #8C4AEC; 
+  float:left;
+}
+
+.pointy-right2 {
+  border-top:5px solid transparent;
+  border-bottom:5px solid transparent;
+  border-left:5px solid #8C4AEC; 
+  float:right;
+}
+
+.pointy-body2 {
+  float:left;
+  height:10px;
+  background:#8C4AEC;
+  width:10px;
+}
+
 
 .imgTest {
   width: 100%;
