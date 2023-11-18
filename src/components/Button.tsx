@@ -17,16 +17,16 @@ type Props = {
 const Button = (props: Props) => {
   const {className, link, width, widthMobile, text, color, colorHover, colorText, colorTextHover, border} = props;
   return (
-    <div className={`flex justify-center items-center w-full mb-8 ${className}`}>
+    <div className={`flex justify-center items-center w-full ${className}`}>
       <div>
-        <div className={`main__button2 ${widthMobile} md:${width}`}></div>
+        <div className={`${border === "border-[#ccff42]" ? "main__button" : "main__button2"} w-${widthMobile} md:w-${width}`}></div>
         <div className={`flex justify-end ${colorText}`}>
           <div className="pr-5 my-3">
-            <div className="pointy-right2"></div>
-            <div className="pointy-body2"></div>
+            <div className={`${border === "border-[#ccff42]" ? "pointy-right" : "pointy-right2"}`}></div>
+            <div className={`${border === "border-[#ccff42]" ? "pointy-body" : "pointy-body2"}`}></div>
           </div>
         </div>
-        <div className="main__button2 w-24 md:w-36"></div>
+        <div className={`${border === "border-[#ccff42]" ? "main__button" : "main__button2"} w-24 md:w-36`}></div>
       </div>
 
       <div
@@ -39,9 +39,15 @@ const Button = (props: Props) => {
       >
         <div className="p-1 border border-[#ccff42]">
           <button>
-            <div className={`relative ${colorText} ${color} px-4 md:px-10 py-2 font-bold z-10 transition-all duration-150 button-primary group-hover:button-primary-disable overflow-hidden`}>
+            <div className={`relative ${color} px-4 md:px-10 py-2 font-bold z-10 transition-all duration-150 button-primary group-hover:button-primary-disable overflow-hidden`}>
               <a href={link}>
-                <span className={`relative z-20 group-hover:text-black`}>
+                <span className={`relative z-20 ${colorText} group-hover:hidden`}>
+                  {text}
+                </span>
+              </a>
+
+              <a href={link}>
+                <span className={`relative z-20 ${colorTextHover} hidden group-hover:block`}>
                   {text}
                 </span>
               </a>
@@ -53,14 +59,14 @@ const Button = (props: Props) => {
       </div>
 
       <div>
-        <div className="main__button2 w-24 md:w-36"></div>
+        <div className={`${border === "border-[#ccff42]" ? "main__button" : "main__button2"} w-24 md:w-36`}></div>
         <div className={`flex justify-start ${colorText}`}>
           <div className="pl-5 my-3">
-            <div className="pointy-left2"></div>
-            <div className="pointy-body2"></div>
+            <div className={`${border === "border-[#ccff42]" ? "pointy-left" : "pointy-left2"}`}></div>
+            <div className={`${border === "border-[#ccff42]" ? "pointy-body" : "pointy-body2"}`}></div>
           </div>
         </div>
-        <div className="main__button2 w-24 md:w-36"></div>
+        <div className={`${border === "border-[#ccff42]" ? "main__button" : "main__button2"} w-24 md:w-36`}></div>
       </div>
     </div>
   );

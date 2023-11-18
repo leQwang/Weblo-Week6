@@ -102,7 +102,15 @@ const Frame5: React.FC<Props> = (props: Props) => {
       {/* desktop */}
       <div className="hidden md:block h-full">
         <div
-          className={`absolute ${view === 0 ? "translate-x-[-0%]" : view === 20? "translate-x-[-20%]" : view === 40 ? "translate-x-[-40%]" : "translate-x-[-60%]" } top-0 h-full w-[250%] transition-transform duration-500 ease-in-out`}
+          className={`absolute ${
+            view === 0
+              ? "translate-x-[-0%]"
+              : view === 20
+              ? "translate-x-[-20%]"
+              : view === 40
+              ? "translate-x-[-40%]"
+              : "translate-x-[-60%]"
+          } top-0 h-full w-[250%] transition-transform duration-500 ease-in-out`}
           // className={`absolute translate-x-[-${view}%] top-0 h-full w-[250%] transition-transform duration-500 ease-in-out`}
           // className={`absolute -left-[${view}%] top-0 h-full w-[250%] transition-transform duration-500 ease-in-out`}
         >
@@ -114,20 +122,28 @@ const Frame5: React.FC<Props> = (props: Props) => {
           />
         </div>
 
-        <div className={`absolute top-1/2 transform -translate-y-1/2 left-4 ${view === 0 ? "hidden" : ""}`}>
+        <div
+          className={`absolute top-1/2 transform -translate-y-1/2 left-4 ${
+            view === 0 ? "hidden" : ""
+          }`}
+        >
           <button
             onClick={handleMoveLeft}
-            className="bg-gray-300 p-2 rounded-full"
+            className="p-2 rounded-full"
           >
-            Left
+            <img src="/f5-arrow-left.png" alt="" />
           </button>
         </div>
-        <div className={`absolute top-1/2 transform -translate-y-1/2 right-4 ${view === 60 ? "hidden" : ""}`}>
+        <div
+          className={`absolute top-1/2 transform -translate-y-1/2 right-4 ${
+            view === 60 ? "hidden" : ""
+          }`}
+        >
           <button
             onClick={handleMoveRight}
-            className="bg-gray-300 p-2 rounded-full"
+            className="p-2 rounded-full"
           >
-            Right
+            <img src="/f5-arrow-right.png" alt="" />
           </button>
         </div>
       </div>
@@ -135,7 +151,17 @@ const Frame5: React.FC<Props> = (props: Props) => {
       {/* Mobile ------------------------------------------------------------------------------ */}
       <div className="md:hidden h-full">
         <div
-          className={`absolute ${mobileView === 0 ? "translate-x-[-0%]" : mobileView === 20? "translate-x-[-20%]" : mobileView === 40 ? "translate-x-[-40%]" : mobileView === 60 ? "translate-x-[-60%]" : "translate-x-[-80%]" } top-0 h-full w-[500%] transition-transform duration-500 ease-in-out`}
+          className={`absolute ${
+            mobileView === 0
+              ? "translate-x-[-0%]"
+              : mobileView === 20
+              ? "translate-x-[-20%]"
+              : mobileView === 40
+              ? "translate-x-[-40%]"
+              : mobileView === 60
+              ? "translate-x-[-60%]"
+              : "translate-x-[-80%]"
+          } top-0 h-full w-[500%] transition-transform duration-500 ease-in-out`}
           // className={`absolute -left-[${mobileView}%] top-0 h-full w-[500%] transition-transform duration-500 ease-in-out`}
         >
           <img
@@ -145,23 +171,30 @@ const Frame5: React.FC<Props> = (props: Props) => {
             style={{ objectPosition: "left" }}
           />
         </div>
-        <div className={`absolute top-1/2 transform -translate-y-1/2 left-4 ${mobileView === 0 ? "hidden" : ""}`}>
+        <div
+          className={`absolute top-1/2 transform -translate-y-1/2 left-4 ${
+            mobileView === 0 ? "hidden" : ""
+          }`}
+        >
           <button
             onClick={handleMobileMoveLeft}
-            className="bg-gray-300 p-2 rounded-full"
+            className="p-2 rounded-full"
           >
-            LeftMobile
+            <img src="/f5-arrow-left.png" alt="" />
           </button>
         </div>
-        <div className={`absolute top-1/2 transform -translate-y-1/2 right-4 ${mobileView === 80 ? "hidden" : ""}`}>
+        <div
+          className={`absolute top-1/2 transform -translate-y-1/2 right-4 ${
+            mobileView === 80 ? "hidden" : ""
+          }`}
+        >
           <button
             onClick={handleMobileMoveRight}
-            className="bg-gray-300 p-2 rounded-full"
+            className="p-2 rounded-full"
           >
-            RightMobile
+            <img src="/f5-arrow-right.png" alt="" />
           </button>
         </div>
-
       </div>
     </div>
   );

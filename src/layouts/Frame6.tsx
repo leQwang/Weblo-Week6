@@ -7,6 +7,7 @@ const Frame6 = (props: Props) => {
   return (
     <div className="relative w-screen h-[150vh] overflow-hidden md:bg-[url(/public/f6-desktop-bg-temp.png)] bg-[url(/public/f6-mobile.png)] bg-center bg-cover bg-no-repeat">
       <div className="w-full h-full flex items-center">
+        <img src="/f6-circle-bug.png" className="absolute top-5 left-5" alt="frame 6 circle bug" />
         <img
           src="/f6-desktop-gekko.png"
           className="absolute right-0 top-0  h-[150vh] hidden md:block"

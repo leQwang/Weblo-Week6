@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../index.css";
+import Button from "../components/Button";
 // import f2FrameLeft from "../assets/f2-frame-left.svg";
 
 type Props = {
@@ -65,18 +66,25 @@ const Frame2 = (props: Props) => {
   }, []);
 
   return (
-    <div className={`flex relative w-screen min-h-screen bg-f2-mobile md:bg-f2-purple ${className}`}>
+    <div
+      className={`flex relative w-screen min-h-screen bg-f2-mobile md:bg-f2-purple bg-center bg-no-repeat bg-cover  ${className}`}
+    >
       {/*  bg-f2-mobile bg-center bg-cover bg-no-repeat */}
 
       <img
         src="/f2-bg-desktop.png"
-        className="absolute -top-[28vh] md:object-cover lg:w-full hidden md:block"
+        className="absolute -top-[28vh] md:object-cover lg:w-full hidden lg:block"
         alt="frame 2 background desktop"
       />
 
+      <img
+        src="/f2-bg-desktop.png"
+        className="absolute bottom-0 md:w-full h-[120vh] hidden md:block lg:hidden z-10"
+        alt="frame 2 background desktop"
+      />
 
       <div className="relative flex flex-col justify-around items-center w-full z-20">
-        <div className="flex flex-col items-center justify-around w-[60%] mb-2 flex-grow">
+        <div className="flex flex-col items-center justify-around w-[60%] mb-2 md:flex-shrink lg:flex-grow">
           <img
             src="/ValorantLogo.png"
             className="w-[40%] md:w-[25%] mt-2 mb-3 md:mb-1 lg:mb-3 xl:mb-5"
@@ -97,7 +105,7 @@ const Frame2 = (props: Props) => {
 
         {/* Desktop ---------------------------------------------------------------------------------------- */}
 
-        <div className="justify-center w-[80%] hidden md:flex flex-grow">
+        <div className="justify-center w-[80%] md:h-[30%] lg:h-auto hidden md:flex flex-grow">
           <img
             src="/f2-FRAMES-desktop.png"
             className="w-full"
@@ -125,7 +133,10 @@ const Frame2 = (props: Props) => {
                 alt="play button"
               />
               <button className="border-[3px] border-[#ccff42] rounded-lg bg-[#8548EB] py-1 px-1 md:px-1 lg:px-2 xl:py-3 xl:px-6 md:mb-2 lg:mb-3 xl:mb-5 ">
-                <a href="" className="text-white hover:text-[#C9FF46] font-bold md:text-sm">
+                <a
+                  href=""
+                  className="text-white hover:text-[#C9FF46] font-bold md:text-sm"
+                >
                   TÌM HIỂU NGAY
                 </a>
               </button>
@@ -147,7 +158,10 @@ const Frame2 = (props: Props) => {
                 alt="play button"
               />
               <button className="border-[3px] border-[#ccff42] rounded-lg bg-[#8548EB] py-1 px-1 md:px-1 lg:px-2 xl:py-3 xl:px-6 md:mb-2 lg:mb-3 xl:mb-5 ">
-                <a href="" className="text-white hover:text-[#C9FF46] font-bold md:text-sm">
+                <a
+                  href=""
+                  className="text-white hover:text-[#C9FF46] font-bold md:text-sm"
+                >
                   TÌM HIỂU NGAY
                 </a>
               </button>
@@ -169,7 +183,10 @@ const Frame2 = (props: Props) => {
                 alt="play button"
               />
               <button className="border-[3px] border-[#ccff42] rounded-lg bg-[#8548EB] py-1 px-1 md:px-1 lg:px-2 xl:py-3 xl:px-6 md:mb-2 lg:mb-3 xl:mb-5 ">
-                <a href="" className="text-white hover:text-[#C9FF46] font-bold md:text-sm">
+                <a
+                  href=""
+                  className="text-white hover:text-[#C9FF46] font-bold md:text-sm"
+                >
                   TÌM HIỂU NGAY
                 </a>
               </button>
@@ -191,7 +208,10 @@ const Frame2 = (props: Props) => {
                 alt="play button"
               />
               <button className="border-[3px] border-[#ccff42] rounded-lg bg-[#8548EB] py-1 px-1 md:px-1 lg:px-2 xl:py-3 xl:px-6 md:mb-2 lg:mb-3 xl:mb-5 ">
-                <a href="" className="text-white hover:text-[#C9FF46] font-bold md:text-sm">
+                <a
+                  href=""
+                  className="text-white hover:text-[#C9FF46] font-bold md:text-sm"
+                >
                   TÌM HIỂU NGAY
                 </a>
               </button>
@@ -204,7 +224,7 @@ const Frame2 = (props: Props) => {
         <div className="justify-center w-[90%] sm:w-[80%] flex md:hidden flex-grow">
           <img
             src="/f2-FRAMES-mobile.png"
-            className="w-full md:hidden framesImage"
+            className="w-full md:hidden framesImage h-[90%] sm:h-auto"
             alt="frames"
             id="framesImageMobile"
           />
@@ -321,51 +341,19 @@ const Frame2 = (props: Props) => {
         </div>
 
         {/* Button -------------------------------------------------------------------------------------------*/}
-
-        <div className="flex justify-center items-center w-full pt-5 pb-10 md:pb-20 flex-grow">
-          <div>
-            <div className="main__button w-24 md:w-36"></div>
-            <div className="flex justify-end text-[#ccff42]">
-              <div className="pr-5 my-3">
-                <div className="pointy-right"></div>
-                <div className="pointy-body"></div>
-              </div>
-            </div>
-            <div className="main__button w-24 md:w-36"></div>
-          </div>
-
-          <div
-            className={`relative mx-5 group
-            before:content-[''] before:w-[110%] before:border before:border-[#ccff42] before:absolute before:top-0 before:left-0 before:-translate-x-[5%] 
-            before:h-[55%] before:-translate-y-2 before:border-b-transparent 
-            
-            after:content-[''] after:w-[110%] after:border after:border-[#ccff42]  after:absolute 
-            after:bottom-0 after:left-0 after:-translate-x-[5%] after:h-[55%] after:translate-y-2 after:border-t-transparent before:z-30 after:z-30`}
-          >
-            <div className="p-1 border border-[#ccff42]">
-              <button>
-                <div className="relative text-black bg-[#ccff42] px-4 md:px-10 py-2 font-bold z-10 transition-all duration-150 button-primary group-hover:button-primary-disable overflow-hidden">
-                  <span className="relative z-20 text-sm group-hover:text-[#ccff42] whitespace-nowrap">
-                    CHIẾN NGAY
-                  </span>
-
-                  <div className="absolute w-0 bg-black h-[110%] transition-all ease-linear duration-[300ms] group-hover:w-[150%] z-10 top-0 -left-12 -skew-x-12"></div>
-                </div>
-              </button>
-            </div>
-          </div>
-
-          <div>
-            <div className="main__button w-24 md:w-36"></div>
-            <div className="flex justify-start text-[#ccff42] ">
-              <div className="pl-5 my-3">
-                <div className="pointy-left"></div>
-                <div className="pointy-body"></div>
-              </div>
-            </div>
-            <div className="main__button w-24 md:w-36"></div>
-          </div>
-        </div>
+        <Button
+            className="mt-[3vh]"
+            link="/"
+            width={"36"}
+            widthMobile={"24"}
+            text="CHIẾN NGAY"
+            border="border-[#ccff42]"
+            color="bg-[#ccff42]"
+            colorHover="bg-black"
+            colorText="text-black"
+            colorTextHover="text-[#ccff42]"
+          />
+      
       </div>
     </div>
   );

@@ -84,9 +84,9 @@ const Frame3 = (props: Props) => {
         alt="frame 3 background mobile"
       />
 
-      <div className="relative flex flex-col min-h-screen z-20 lg:mt-20">
-        <div className="flex flex-col justify-start  items-center min-h-screen w-full md:w-[70%] md:ml-[5%]">
-          <div className="flex w-[80%] md:w-[60%] lg:w-[40%] text-3xl font-bold text-white justify-around">
+      <div className="relative flex flex-col min-h-screen z-20">
+        <div className="flex flex-col items-center min-h-screen w-full md:w-[60%] md:ml-[5%]">
+          <div className="flex w-[80%] md:w-[60%] lg:w-[40%] text-3xl font-bold text-white justify-around md:mt-[15vh]">
             <span>🏐</span>
             <span className="text-[#C9FF46]">GEKKO</span>
             <span className="text-[#C9FF46]"> // </span>
@@ -101,7 +101,7 @@ const Frame3 = (props: Props) => {
 
           {/* Video ----------------------------------------------------------------------------------------------- */}
 
-          <div className="flex justify-center items-center w-[80%] md:w-[70%] ">
+          <div className="flex justify-center items-center w-[80%] md:w-[65%] ">
             <img
               src="/f3-Frame-left.png"
               className="relative md:hidden py-4"
@@ -118,8 +118,8 @@ const Frame3 = (props: Props) => {
                 ref={videoRef}
               ></video>
               <div
-                className="absolute flex justify-center w-[75%] md:w-[48%] border rounded-lg border-[#C9FF46] z-10 "
-                style={{ height: videoHeight - 10 }}
+                className="absolute flex justify-center w-[75%] md:w-[38%] border rounded-lg border-[#C9FF46] z-10 "
+                style={{ height: videoHeight }}
                 onClick={handleVideoClick}
               ></div>
               <img
