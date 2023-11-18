@@ -64,6 +64,16 @@
   margin: 0;
 }
 
+html{
+  scroll-snap-align: y mandatory;
+}
+
+.snap{
+  height: 100vh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
 html,
 body {
   max-width: 100vw !important;

@@ -10,10 +10,10 @@ import Frame6 from "./layouts/Frame6";
 function App() {
   return (
     <div className="App overflow-x-hidden">
-      <Frame1 />
+      <Frame1 className="snap"/>
       <div className="bg-[#271649]">
-        <Frame2 />
-        <Frame3 />
+        <Frame2 className="snap"/>
+        <Frame3 className="snap"/>
       </div>
       <Frame4 />
       <Frame5 />

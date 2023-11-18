@@ -2,9 +2,12 @@ import React, { useState, useEffect } from "react";
 import "../index.css";
 // import f2FrameLeft from "../assets/f2-frame-left.svg";
 
-type Props = {};
+type Props = {
+  className?: string;
+};
 
 const Frame2 = (props: Props) => {
+  const { className } = props;
   const [imageHeight, setImageHeight] = useState(300);
   const [imageHeightMobile, setImageHeightMobile] = useState(300);
 
@@ -62,7 +65,7 @@ const Frame2 = (props: Props) => {
   }, []);
 
   return (
-    <div className="flex relative w-screen min-h-screen bg-f2-mobile md:bg-f2-purple ">
+    <div className={`flex relative w-screen min-h-screen bg-f2-mobile md:bg-f2-purple ${className}`}>
       {/*  bg-f2-mobile bg-center bg-cover bg-no-repeat */}
 
       <img

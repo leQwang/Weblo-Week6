@@ -2,11 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "../index.css";
 
-type Props = {};
+type Props = {
+  className?: string;
+};
 
 const Frame1 = (props: Props) => {
+  const { className } = props;
   return (
-    <div className="relative w-screen min-h-screen overflow-hidden">
+    <div className={`relative w-screen min-h-screen overflow-hidden ${className}`}>
       <video
         className="absolute object-cover h-full w-full"
         src="/video/Gekko Trailer.mp4"

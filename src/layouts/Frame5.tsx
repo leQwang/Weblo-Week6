@@ -9,22 +9,92 @@ const Frame5: React.FC<Props> = (props: Props) => {
   const [view, setView] = useState(0);
 
   const handleMoveRight = () => {
-    console.log("move right", view);
-    setView((prevView) => Math.min(prevView + 50, 150));
+    // switch (view) {
+    //   case 0:
+    //     setView(50);
+    //     break;
+    //   case 50:
+    //     setView(100);
+    //     break;
+    //   case 100:
+    //     setView(150);
+    //     break;
+    // }
+    switch (view) {
+      case 0:
+        setView(20);
+        break;
+      case 20:
+        setView(40);
+        break;
+      case 40:
+        setView(60);
+        break;
+    }
   };
 
   const handleMoveLeft = () => {
-    setView((prevView) => Math.max(prevView - 50, 0));
+    // switch (view) {
+    //   case 150:
+    //     setView(100);
+    //     break;
+    //   case 100:
+    //     setView(50);
+    //     break;
+    //   case 50:
+    //     setView(0);
+    //     break;
+    // }
+    switch (view) {
+      case 60:
+        setView(40);
+        break;
+      case 40:
+        setView(20);
+        break;
+      case 20:
+        setView(0);
+        break;
+    }
   };
 
   const [mobileView, setMobileView] = useState(0);
 
   const handleMobileMoveRight = () => {
-    setMobileView((prevView) => Math.min(prevView + 100, 400));
+    console.log(mobileView);
+    switch (mobileView) {
+      case 0:
+        setMobileView(20);
+        break;
+      case 20:
+        setMobileView(40);
+        break;
+      case 40:
+        setMobileView(60);
+        break;
+      case 60:
+        setMobileView(80);
+        break;
+    }
   };
 
   const handleMobileMoveLeft = () => {
-    setMobileView((prevView) => Math.max(prevView - 100, 0));
+    console.log(mobileView);
+
+    switch (mobileView) {
+      case 80:
+        setMobileView(60);
+        break;
+      case 60:
+        setMobileView(40);
+        break;
+      case 40:
+        setMobileView(20);
+        break;
+      case 20:
+        setMobileView(0);
+        break;
+    }
   };
 
   return (
@@ -32,8 +102,9 @@ const Frame5: React.FC<Props> = (props: Props) => {
       {/* desktop */}
       <div className="hidden md:block h-full">
         <div
-          // className={`absolute translate-x-[-${view}%] transform top-0 h-full w-[350%] transition-transform duration-500 ease-in-out`}
-          className={`absolute -left-[${view}%] top-0 h-full w-[250%] transition-transform duration-500 ease-in-out`}
+          className={`absolute ${view === 0 ? "translate-x-[-0%]" : view === 20? "translate-x-[-20%]" : view === 40 ? "translate-x-[-40%]" : "translate-x-[-60%]" } top-0 h-full w-[250%] transition-transform duration-500 ease-in-out`}
+          // className={`absolute translate-x-[-${view}%] top-0 h-full w-[250%] transition-transform duration-500 ease-in-out`}
+          // className={`absolute -left-[${view}%] top-0 h-full w-[250%] transition-transform duration-500 ease-in-out`}
         >
           <img
             src="/f5.png"
@@ -43,7 +114,7 @@ const Frame5: React.FC<Props> = (props: Props) => {
           />
         </div>
 
-        <div className="hidden md:block absolute top-1/2 transform -translate-y-1/2 left-4">
+        <div className={`absolute top-1/2 transform -translate-y-1/2 left-4 ${view === 0 ? "hidden" : ""}`}>
           <button
             onClick={handleMoveLeft}
             className="bg-gray-300 p-2 rounded-full"
@@ -51,7 +122,7 @@ const Frame5: React.FC<Props> = (props: Props) => {
             Left
           </button>
         </div>
-        <div className="hidden md:block absolute top-1/2 transform -translate-y-1/2 right-4">
+        <div className={`absolute top-1/2 transform -translate-y-1/2 right-4 ${view === 60 ? "hidden" : ""}`}>
           <button
             onClick={handleMoveRight}
             className="bg-gray-300 p-2 rounded-full"
@@ -60,10 +131,12 @@ const Frame5: React.FC<Props> = (props: Props) => {
           </button>
         </div>
       </div>
+
+      {/* Mobile ------------------------------------------------------------------------------ */}
       <div className="md:hidden h-full">
         <div
-          // className={`absolute translate-x-[-${view}%] transform top-0 h-full w-[250%] transition-transform duration-500 ease-in-out`}
-          className={`absolute -left-[${mobileView}%] top-0 h-full w-[500%] transition-transform duration-500 ease-in-out`}
+          className={`absolute ${mobileView === 0 ? "translate-x-[-0%]" : mobileView === 20? "translate-x-[-20%]" : mobileView === 40 ? "translate-x-[-40%]" : mobileView === 60 ? "translate-x-[-60%]" : "translate-x-[-80%]" } top-0 h-full w-[500%] transition-transform duration-500 ease-in-out`}
+          // className={`absolute -left-[${mobileView}%] top-0 h-full w-[500%] transition-transform duration-500 ease-in-out`}
         >
           <img
             src="/f5.png"
@@ -72,7 +145,7 @@ const Frame5: React.FC<Props> = (props: Props) => {
             style={{ objectPosition: "left" }}
           />
         </div>
-        <div className="md:hidden absolute top-1/2 transform -translate-y-1/2 left-4">
+        <div className={`absolute top-1/2 transform -translate-y-1/2 left-4 ${mobileView === 0 ? "hidden" : ""}`}>
           <button
             onClick={handleMobileMoveLeft}
             className="bg-gray-300 p-2 rounded-full"
@@ -80,7 +153,7 @@ const Frame5: React.FC<Props> = (props: Props) => {
             LeftMobile
           </button>
         </div>
-        <div className="md:hidden absolute top-1/2 transform -translate-y-1/2 right-4">
+        <div className={`absolute top-1/2 transform -translate-y-1/2 right-4 ${mobileView === 80 ? "hidden" : ""}`}>
           <button
             onClick={handleMobileMoveRight}
             className="bg-gray-300 p-2 rounded-full"

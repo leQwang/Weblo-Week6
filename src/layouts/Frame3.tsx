@@ -1,8 +1,11 @@
 import React, { useRef, useState, useEffect } from "react";
 
-type Props = {};
+type Props = {
+  className?: string;
+};
 
 const Frame3 = (props: Props) => {
+  const { className } = props;
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [currentSkill, setCurrentSkill] = useState<String>("First");
@@ -68,7 +71,7 @@ const Frame3 = (props: Props) => {
   };
 
   return (
-    <div className="relative min-h-screen md:-translate-y-[5vh] z-10">
+    <div className={`relative min-h-screen md:-translate-y-[5vh] z-10`}>
       <img
         src="/f3-bg-desktop.png"
         className="absolute h-[150vh] -bottom-[47vh] w-full hidden md:block "

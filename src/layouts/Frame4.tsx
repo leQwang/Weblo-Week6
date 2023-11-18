@@ -22,7 +22,8 @@ export default function Frame4(props: Props) {
       <div className="navigation-wrapper ">
         <div ref={sliderRef} className="keen-slider">
           <div className="keen-slider__slide md:h-screen">
-            <video src="/video/Gekko Video 2.mp4" className="absolute object-cover h-full w-full hidden md:block" autoPlay loop muted></video>
+            {/* <video src="/video/Gekko Video 2.mp4" className="absolute object-cover h-full w-full hidden md:block" autoPlay loop muted></video> */}
+            <img src="/f4-0.png" className="hidden md:block object-cover h-full w-full" alt="frame 4 picture 1" />
             <img src="/f4-mobile-0.png" className="md:hidden object-cover h-full w-full" alt="frame 4 picture 0 mobile" />
           </div>
           <div className="keen-slider__slide md:h-screen ">
