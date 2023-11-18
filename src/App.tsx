@@ -6,6 +6,7 @@ import Frame3 from "./layouts/Frame3";
 import Frame4 from "./layouts/Frame4";
 import Frame5 from "./layouts/Frame5";
 import Frame6 from "./layouts/Frame6";
+import Frame7 from "./layouts/Frame7";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Frame4 />
       <Frame5 />
       <Frame6 />
+      <Frame7 />
     </div>
   );
 }

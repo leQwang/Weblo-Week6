@@ -42,7 +42,7 @@ const Frame6 = (props: Props) => {
         </div>
 
         {/* Social Media */}
-        <div className="absolute bottom-[10vh] md:bottom-[10vh] w-full flex flex-col items-center z-10">
+        <div className="absolute bottom-[2vh] md:bottom-[5vh] w-full flex flex-col items-center z-10">
           <div className="flex w-[90%] md:w-[30%] justify-around">
             <a
               target="_blank"
@@ -116,7 +116,7 @@ const Frame6 = (props: Props) => {
               <div className="absolute bottom-0 left-0 w-0 h-full transition-all duration-300 ease-in-out skew-x-[45deg] translate-y-1/2 -translate-x-1/2 bg-[#0f1923] -z-10 group-hover:scale-[5] group-hover:w-full"></div>
             </a>
           </div>
-          <a href="#" className="mt-10 uppercase text-[#8C4AEC] font-myriad tracking-wider font-semibold underline text-[18px] text-center px-1 pb-0 lg:text-3xl lg:pb-4">Xem thêm tin tức về valorant</a>
+          <a href="#" className="mt-10 w-[50%] uppercase text-[#8C4AEC] font-myriad tracking-wider font-semibold underline text-[18px] text-center px-1 pb-0 lg:text-3xl lg:pb-4">Xem thêm tin tức về valorant</a>
         </div>
       </div>
     </div>

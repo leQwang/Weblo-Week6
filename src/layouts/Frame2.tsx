@@ -342,7 +342,7 @@ const Frame2 = (props: Props) => {
 
         {/* Button -------------------------------------------------------------------------------------------*/}
         <Button
-            className="mt-[3vh]"
+            className="mb-[3vh] md:mb-0 md:mt-[3vh]"
             link="/"
             width={"36"}
             widthMobile={"24"}
